@@ -148,3 +148,9 @@ footer{background:#030b12;color:#c6d0d7;padding:70px 0 30px}.footer-top{display:
 .approach-head-single{grid-template-columns:1fr}
 .approach-head-single>div{max-width:720px}
 #weatherAutoInfo{color:#6f8390}
+
+.section-head-single{grid-template-columns:1fr}
+.section-head-single>div{max-width:760px}
+.brand{gap:0}
+.brand>span:last-child{display:block}
+@media(max-width:640px){.brand b{font-size:11px}.brand small{font-size:8px}}
