@@ -144,3 +144,7 @@ footer{background:#030b12;color:#c6d0d7;padding:70px 0 30px}.footer-top{display:
 .weather-official-link:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,.16)}
 .weather-homebriefing-link{border:1px solid rgba(255,255,255,.18);color:#fff;background:rgba(255,255,255,.04)}
 .weather-homebriefing-link:hover{background:rgba(255,255,255,.1)}
+
+.approach-head-single{grid-template-columns:1fr}
+.approach-head-single>div{max-width:720px}
+#weatherAutoInfo{color:#6f8390}
