@@ -264,7 +264,7 @@
       </div>
       <div class="ops-grid">
         <div><small>ICAO</small><b>LOKW</b><em>Wolfsberg</em></div>
-        <div><small>COORD</small><b>N 46°49.1'</b><em>E 014°49.5'</em></div>
+        <div><small>KOORDINATEN</small><b>46°49.1′ N</b><em>014°49.5′ E</em></div>
         <div><small>RWY</small><b>18 / 36</b><em>Grass</em></div>
         <div><small data-i18n="length">Länge</small><b>740 m</b><em data-i18n="runwayLength">Runway length</em></div>
         <div><small data-i18n="elevation">Seehöhe</small><b>1467 ft</b><em>447 m</em></div>
@@ -286,6 +286,30 @@
         <p><span data-i18n="weekday">Montag – Donnerstag</span><b data-i18n="onRequest">nach Anfrage</b></p>
       </div>
     </div>
+
+    <section class="approach-section reveal" aria-labelledby="approachTitle">
+      <div class="approach-head">
+        <div>
+          <p class="eyebrow">ANFLUGBLÄTTER</p>
+          <h3 id="approachTitle">Anflug auf LOKW.</h3>
+        </div>
+        <p>Die folgenden Blätter stammen aus dem bisherigen öffentlichen Pilot-Bereich des KLV Wolfsberg. Vor jedem Flug sind Aktualität und Gültigkeit mit den offiziellen Luftfahrtinformationen zu prüfen.</p>
+      </div>
+      <div class="approach-grid">
+        <a class="chart-card" href="https://static.wixstatic.com/media/bfdbbf_1302763ab76e4a42ba96a3053cdbd736~mv2.png" target="_blank" rel="noopener">
+          <img src="https://static.wixstatic.com/media/bfdbbf_1302763ab76e4a42ba96a3053cdbd736~mv2.png" alt="Anflugblatt Flugplatz Wolfsberg LOKW">
+          <span><small>ANFLUGBLATT 01</small><b>In Originalgröße öffnen ↗</b></span>
+        </a>
+        <a class="chart-card" href="https://static.wixstatic.com/media/bfdbbf_3fb896063a7d4faca68d49de5a881562~mv2.png" target="_blank" rel="noopener">
+          <img src="https://static.wixstatic.com/media/bfdbbf_3fb896063a7d4faca68d49de5a881562~mv2.png" alt="Anflugblatt Flugplatz Wolfsberg LOKW">
+          <span><small>ANFLUGBLATT 02</small><b>In Originalgröße öffnen ↗</b></span>
+        </a>
+      </div>
+      <div class="approach-note">
+        <strong>Pilot Reminder</strong>
+        <span>Wolfsberg Flugplatz · 122.505 MHz · RWY 18/36 · 740 m Gras · Elevation 1467 ft</span>
+      </div>
+    </section>
 
     <div class="pilot-detail-grid reveal">
       <article>
@@ -314,16 +338,23 @@
 
 <section class="weather-section">
   <div class="wrap weather-grid reveal">
-    <div>
-      <p class="eyebrow light" data-i18n="weatherKicker">WETTER AM PLATZ</p>
-      <h2 data-i18n="weatherTitle">Wetter am Flugplatz.</h2>
-      <p class="muted-light" data-i18n="weatherDisclaimer">Die Wetterübersicht dient ausschließlich der Orientierung und ersetzt keine offizielle Flugwetterberatung.</p>
+    <div class="weather-copy">
+      <p class="eyebrow light">WETTER AM PLATZ</p>
+      <h2>Aktuell in<br>Wolfsberg.</h2>
+      <p class="muted-light">Live-Orientierungsdaten für den Flugplatzbereich LOKW. Für die Flugvorbereitung sind ausschließlich die offiziellen Flugwetter- und Luftfahrtinformationen maßgeblich.</p>
+      <div class="weather-meta">
+        <span><i id="weatherStatus"></i><b id="weatherState">Wetter wird geladen</b></span>
+        <small>Position: 46.8183° N · 14.8250° E</small>
+        <button id="weatherRefresh" type="button">Jetzt aktualisieren ↻</button>
+      </div>
     </div>
     <div class="weather-card" id="weatherCard">
-      <div><small data-i18n="temp">Temperatur</small><b id="temp">–</b></div>
-      <div><small data-i18n="wind">Wind</small><b id="wind">–</b></div>
-      <div><small data-i18n="gust">Böen</small><b id="gust">–</b></div>
-      <div><small data-i18n="updated">Aktualisiert</small><b id="updated">–</b></div>
+      <div class="weather-main"><small>Temperatur</small><b id="temp">–</b><em id="weatherCondition">–</em></div>
+      <div><small>Wind</small><b id="wind">–</b><em id="windDirection">–</em></div>
+      <div><small>Böen</small><b id="gust">–</b><em>10 m AGL</em></div>
+      <div><small>Luftfeuchte</small><b id="humidity">–</b><em>relativ</em></div>
+      <div><small>Luftdruck</small><b id="pressure">–</b><em>Oberflächendruck</em></div>
+      <div><small>Aktualisiert</small><b id="updated">–</b><em>Europe/Vienna</em></div>
     </div>
   </div>
 </section>
