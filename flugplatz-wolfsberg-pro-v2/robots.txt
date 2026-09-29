@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.flugplatz-wolfsberg.at/sitemap.xml
