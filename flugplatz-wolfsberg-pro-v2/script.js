@@ -76,7 +76,7 @@ async function loadWeather(){
   if(dot) dot.className="";
   if(refresh) refresh.disabled=true;
   try{
-    const r=await fetch("/api/metar",{cache:"no-store"});
+    const r=await fetch("/api/metar?ts="+Date.now(),{cache:"no-store",headers:{"Cache-Control":"no-cache"}});
     if(!r.ok) throw new Error("metar");
     const m=await r.json();
     const windDir=m.wdir===0?"000":m.wdir;
@@ -112,7 +112,7 @@ async function loadWeather(){
 const weatherRefresh=$("#weatherRefresh");
 if(weatherRefresh) weatherRefresh.addEventListener("click",loadWeather);
 loadWeather();
-setInterval(loadWeather,300000);
+setInterval(loadWeather,60000);
 
 if("IntersectionObserver" in window){
   const revealObserver=new IntersectionObserver((entries)=>{
@@ -138,3 +138,9 @@ window.addEventListener("scroll",()=>{
   sections.forEach(s=>{if(s.offsetTop<=y) current=s.id;});
   navAnchors.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+current));
 },{passive:true});
+
+document.addEventListener("visibilitychange",()=>{
+  if(document.visibilityState==="visible") loadWeather();
+});
+window.addEventListener("focus",loadWeather);
+window.addEventListener("online",loadWeather);
