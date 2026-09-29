@@ -120,3 +120,19 @@ footer{background:#030b12;color:#c6d0d7;padding:70px 0 30px}.footer-top{display:
 .weather-main{background:rgba(223,74,63,.08)}
 @media(max-width:1000px){.approach-head,.weather-grid{grid-template-columns:1fr}.chart-card img{height:430px}.weather-card{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.approach-grid{grid-template-columns:1fr}.chart-card img{height:auto;max-height:520px}.approach-note{align-items:flex-start;flex-direction:column;gap:6px}.weather-card{grid-template-columns:1fr 1fr}.weather-card>div{min-height:115px;padding:20px}.weather-card b{font-size:24px}}
+
+/* Official aviation weather / METAR */
+.metar-panel{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);border-radius:26px;overflow:hidden;backdrop-filter:blur(12px)}
+.metar-top{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid rgba(255,255,255,.09)}
+.metar-top>div{padding:22px 25px}
+.metar-top>div+div{border-left:1px solid rgba(255,255,255,.09)}
+.metar-top small,.metar-grid small,.raw-metar small{display:block;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#8fa0ac}
+.metar-top b{display:block;font-size:25px;margin-top:4px}.metar-top em{font-style:normal;color:#7f929f;font-size:10px}
+.metar-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.metar-grid>div{padding:24px;border-right:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09);min-height:122px}
+.metar-grid>div:nth-child(3n){border-right:0}.metar-grid b{display:block;font-size:25px;margin-top:5px}.metar-grid em{display:block;font-style:normal;color:#7f929f;font-size:10px;margin-top:4px}
+.raw-metar{padding:18px 22px;background:rgba(0,0,0,.12)}.raw-metar code{display:block;margin-top:7px;color:#dce6ed;font-size:11px;line-height:1.55;white-space:normal;word-break:break-word}
+.aip-strip{display:grid;grid-template-columns:repeat(4,1fr);margin-top:18px;background:#fff;border-radius:22px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.aip-strip>div{padding:22px;border-right:1px solid var(--line)}.aip-strip>div:last-child{border-right:0}.aip-strip small{display:block;font-size:8px;letter-spacing:.14em;color:var(--red);font-weight:900}.aip-strip b{display:block;margin-top:6px;font-size:13px;line-height:1.35}
+@media(max-width:1000px){.metar-grid{grid-template-columns:1fr 1fr}.aip-strip{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.metar-top{grid-template-columns:1fr}.metar-top>div+div{border-left:0;border-top:1px solid rgba(255,255,255,.09)}.metar-grid{grid-template-columns:1fr 1fr}.metar-grid>div{padding:18px;min-height:105px}.aip-strip{grid-template-columns:1fr}.aip-strip>div{border-right:0;border-bottom:1px solid var(--line)}}
