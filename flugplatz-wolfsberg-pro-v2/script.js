@@ -1,7 +1,11 @@
 const $ = (s)=>document.querySelector(s);
 const $$ = (s)=>document.querySelectorAll(s);
 
-$(".menubtn").addEventListener("click",()=>$(".navlinks").classList.toggle("open"));
+$(".menubtn").addEventListener("click",()=>{
+  const open=$(".navlinks").classList.toggle("open");
+  $(".menubtn").classList.toggle("open",open);
+  $(".menubtn").setAttribute("aria-expanded",String(open));
+});
 $$(".navlinks a").forEach(a=>a.addEventListener("click",()=>$(".navlinks").classList.remove("open")));
 
 const dict = {
@@ -74,3 +78,22 @@ $("#contactForm").addEventListener("submit",(e)=>{
   $("#temp").textContent="Demo"; $("#wind").textContent="—"; $("#gust").textContent="—"; $("#updated").textContent="offline";
  }
 })();
+
+/* Premium interaction layer */
+const revealObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add("in-view");revealObserver.unobserve(entry.target);}
+  });
+},{threshold:.12,rootMargin:"0px 0px -30px 0px"});
+$$(".reveal").forEach(el=>revealObserver.observe(el));
+
+const navShell=$(".navshell");
+const sections=[...document.querySelectorAll("main section[id]")];
+const navAnchors=[...document.querySelectorAll('.navlinks a[href^="#"]')];
+window.addEventListener("scroll",()=>{
+  navShell.classList.toggle("scrolled",window.scrollY>12);
+  const y=window.scrollY+150;
+  let current="";
+  sections.forEach(s=>{if(s.offsetTop<=y) current=s.id;});
+  navAnchors.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+current));
+},{passive:true});
