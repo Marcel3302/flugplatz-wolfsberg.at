@@ -136,3 +136,11 @@ footer{background:#030b12;color:#c6d0d7;padding:70px 0 30px}.footer-top{display:
 .aip-strip>div{padding:22px;border-right:1px solid var(--line)}.aip-strip>div:last-child{border-right:0}.aip-strip small{display:block;font-size:8px;letter-spacing:.14em;color:var(--red);font-weight:900}.aip-strip b{display:block;margin-top:6px;font-size:13px;line-height:1.35}
 @media(max-width:1000px){.metar-grid{grid-template-columns:1fr 1fr}.aip-strip{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.metar-top{grid-template-columns:1fr}.metar-top>div+div{border-left:0;border-top:1px solid rgba(255,255,255,.09)}.metar-grid{grid-template-columns:1fr 1fr}.metar-grid>div{padding:18px;min-height:105px}.aip-strip{grid-template-columns:1fr}.aip-strip>div{border-right:0;border-bottom:1px solid var(--line)}}
+
+.weather-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px}
+.weather-actions button,.weather-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:38px;border-radius:999px;padding:0 14px;font-size:10px;font-weight:850;transition:.2s}
+.weather-actions button{margin-top:0}
+.weather-official-link{background:#fff;color:#07111d;border:1px solid #fff}
+.weather-official-link:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,.16)}
+.weather-homebriefing-link{border:1px solid rgba(255,255,255,.18);color:#fff;background:rgba(255,255,255,.04)}
+.weather-homebriefing-link:hover{background:rgba(255,255,255,.1)}
