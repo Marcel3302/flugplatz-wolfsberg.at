@@ -352,7 +352,11 @@
       <div class="weather-meta">
         <span><i id="weatherStatus"></i><b id="weatherState">METAR wird geladen</b></span>
         <small>Referenzstation: LOWK · Klagenfurt · ca. 42 km von LOKW</small>
-        <button id="weatherRefresh" type="button">METAR aktualisieren ↻</button>
+        <div class="weather-actions">
+          <button id="weatherRefresh" type="button">METAR aktualisieren ↻</button>
+          <a class="weather-official-link" href="https://www.austrocontrol.at/flugwetter" target="_blank" rel="noopener noreferrer">Austro Control Flugwetter ↗</a>
+          <a class="weather-homebriefing-link" href="https://www.homebriefing.com/" target="_blank" rel="noopener noreferrer">Homebriefing ↗</a>
+        </div>
       </div>
     </div>
     <div class="metar-panel" id="weatherCard">
