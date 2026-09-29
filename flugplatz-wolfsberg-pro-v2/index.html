@@ -10,6 +10,13 @@
 <meta property="og:title" content="Flugplatz Wolfsberg · LOKW">
 <meta property="og:description" content="Fliegen, lernen und ankommen im Lavanttal.">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="de_AT">
+<meta property="og:site_name" content="Flugplatz Wolfsberg">
+<link rel="canonical" href="https://www.flugplatz-wolfsberg.at/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Kärntner Luftfahrerverband Wolfsberg","url":"https://www.flugplatz-wolfsberg.at/","email":"office@flugplatz-wolfsberg.at","telephone":"+43 4352 81709","address":{"@type":"PostalAddress","streetAddress":"Reinfelsdorf 17","postalCode":"9431","addressLocality":"St. Stefan","addressCountry":"AT"}}
+</script>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,7 +29,6 @@
       <span>122.505 MHz</span>
       <span>RWY 18/36</span>
       <span>1467 ft</span>
-      <button id="langBtn" class="lang" type="button" aria-label="Sprache wechseln">EN</button>
     </div>
   </div>
 </div>
@@ -39,7 +45,6 @@
       <a href="#school" data-i18n="navSchool">Flugschule</a>
       <a href="#pilots" data-i18n="navPilots">Piloten</a>
       <a href="#fleet" data-i18n="navFleet">Flotte</a>
-      <a href="#news" data-i18n="navNews">Aktuelles</a>
       <a href="#restaurant">Ikarus</a>
       <a class="pill" href="#contact" data-i18n="contact">Kontakt</a>
     </div>
@@ -135,7 +140,7 @@
       </div>
       <div>
         <h3>Über den Verein</h3>
-        <p>Der KLV Wolfsberg besteht seit mehr als 69 Jahren und zählt laut bisherigem Webauftritt rund 60 aktive Mitglieder. Vereinsmitglieder können – entsprechend Ausbildung und Berechtigung – auf verschiedene vereinseigene Flugzeuge zurückgreifen.</p>
+        <p>Der KLV Wolfsberg besteht seit mehr als 69 Jahren und zählt rund 60 aktive Mitglieder. Vereinsmitglieder können – entsprechend Ausbildung und Berechtigung – auf verschiedene vereinseigene Flugzeuge zurückgreifen.</p>
         <p>Der Verein bietet Ausbildung und Berechtigungsprüfungen für unterschiedliche Pilotenscheine. Erfahrene Fluglehrer begleiten angehende Piloten von den ersten Schritten bis zur jeweiligen Berechtigung.</p>
       </div>
     </div>
@@ -169,13 +174,9 @@
       <a href="#contact" class="btn" data-i18n="requestTraining">Ausbildung anfragen</a>
     </div>
 
-    <div class="school-photo reveal">
-      <div class="school-visual-mark" aria-hidden="true">
-        <span>LOKW</span>
-        <strong>FLIGHT<br>TRAINING</strong>
-      </div>
-      <div class="school-badge"><small data-i18n="dto">AUSBILDUNGSBETRIEB</small><b>AT.DTO.10016<br>AT.DTO.3016</b></div>
-      <div class="school-caption"><span></span><small data-i18n="photoNote">Ausbildungsfoto folgt nach Freigabe</small></div>
+    <div class="school-photo reveal" role="img" aria-label="Segelflugausbildung am Flugplatz Wolfsberg">
+      <div class="school-badge"><small>AUSBILDUNGSBETRIEB</small><b>AT.DTO.10016<br>AT.DTO.3016</b></div>
+      <div class="school-caption"><span></span><small>Segel- & Motorflugausbildung · LOKW</small></div>
     </div>
   </div>
 
@@ -235,14 +236,14 @@
     </div>
 
     <div class="school-media-row">
-      <div class="media-teaser">
-        <small>FLUGSCHULE</small><h4>Video zu unserer Flugschule</h4>
-        <p>Der bisherige Webauftritt enthält ein Flugschulvideo. Bis die Original-Videodatei bzw. der Embed-Link übernommen wird, bleibt dieser Bereich als definierter Medienplatz erhalten.</p>
-        <a href="https://www.flugplatz-wolfsberg.at/" target="_blank" rel="noopener">Originalvideo ansehen ↗</a>
+      <div class="media-teaser media-photo">
+        <small>FLUGSCHULE</small><h4>Praxisnah am Flugplatz Wolfsberg</h4>
+        <p>Ausbildung in einem aktiven Vereinsumfeld mit direktem Bezug zum täglichen Flugbetrieb – vom ersten Schulflug bis zur Weiterbildung.</p>
+        <a href="#contact">Ausbildung anfragen ↗</a>
       </div>
       <div class="media-teaser">
         <small>DTO</small><h4>EASA-konforme Ausbildung</h4>
-        <p>Ausbildungsbetrieb unter den veröffentlichten Kennungen <strong>AT.DTO.10016</strong> und <strong>AT.DTO.3016</strong>, mit Ausbildungsmöglichkeiten vom Flugschüler bis hin zur Weiterbildung im Segelflug.</p>
+        <p>Ausbildungsbetrieb unter <strong>AT.DTO.10016</strong> und <strong>AT.DTO.3016</strong> mit Ausbildungsmöglichkeiten vom Flugschüler bis zur Weiterbildung im Segelflug.</p>
       </div>
     </div>
   </div>
@@ -305,7 +306,7 @@
       <article>
         <small>PILOT SERVICES</small>
         <h4>Anflugblätter & Webcams</h4>
-        <p>Der bisherige Auftritt führt eigene Bereiche für Anflugblätter und Webcams. Diese bleiben im Relaunch als Pilot-Services vorgesehen.</p>
+        <p>Anflug- und Betriebsinformationen sind vor dem Flug mit den aktuellen offiziellen Luftfahrtunterlagen abzugleichen. Für Rückfragen steht der Betriebsleiter zur Verfügung.</p>
       </article>
     </div>
   </div>
@@ -315,8 +316,8 @@
   <div class="wrap weather-grid reveal">
     <div>
       <p class="eyebrow light" data-i18n="weatherKicker">WETTER AM PLATZ</p>
-      <h2 data-i18n="weatherTitle">Schneller Wetterüberblick.</h2>
-      <p class="muted-light" data-i18n="weatherDisclaimer">Demo-Wetterdaten dienen nur der Website-Vorschau und nicht der Flugvorbereitung.</p>
+      <h2 data-i18n="weatherTitle">Wetter am Flugplatz.</h2>
+      <p class="muted-light" data-i18n="weatherDisclaimer">Die Wetterübersicht dient ausschließlich der Orientierung und ersetzt keine offizielle Flugwetterberatung.</p>
     </div>
     <div class="weather-card" id="weatherCard">
       <div><small data-i18n="temp">Temperatur</small><b id="temp">–</b></div>
@@ -331,11 +332,11 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div><p class="eyebrow" data-i18n="fleetKicker">VEREINSFLOTTE</p><h2 data-i18n="fleetTitle">Vom Schulflug<br>bis zur Reise.</h2></div>
-      <p data-i18n="fleetCopy">Ein Auszug aus der auf der bestehenden Website veröffentlichten Vereinsflotte.</p>
+      <p data-i18n="fleetCopy">Motor- und Segelflugzeuge für Ausbildung, Schlepp, Rundflug und Reise.</p>
     </div>
 
     <div class="fleet-intro reveal">
-      <p>Die Vereinsflotte umfasst Motor- und Segelflugzeuge für Schulung, Schlepp, lokale Flüge und Reisen. Die folgenden technischen Angaben stammen aus dem bisherigen öffentlichen Webauftritt des KLV Wolfsberg.</p>
+      <p>Die Vereinsflotte umfasst Motor- und Segelflugzeuge für Schulung, Schlepp, lokale Flüge und Reisen. Die Vereinsmaschinen decken Ausbildung, Segelflugschlepp, Rundflug und Reiseflug ab.</p>
     </div>
     <div class="fleet-grid">
       <article class="reveal">
@@ -355,16 +356,6 @@
         <div class="plane-copy"><span>2 SITZE · SEGELFLUG</span><h3>Twin Astir</h3><p>D-7791 · Schul- und Schnupperflugzeug</p><ul><li>Grundschulung & Schnupperflüge</li><li>Lokale Thermikflüge</li><li>Spannweite: 17,5 m</li><li>MTOW: 650 kg · Gleitzahl 38</li></ul><i>04</i></div>
       </article>
     </div>
-  </div>
-</section>
-
-<section class="section news" id="news">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div><p class="eyebrow" data-i18n="newsKicker">NEWS & EVENTS</p><h2 data-i18n="newsTitle">Was am Flugplatz<br>gerade passiert.</h2></div>
-      <a class="arrow" href="#contact" data-i18n="allNews">Alle Neuigkeiten <span>→</span></a>
-    </div>
-    <div class="news-grid" id="newsGrid"></div>
   </div>
 </section>
 
@@ -397,7 +388,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div><p class="eyebrow">BILDERGALERIE</p><h2>Flugbetrieb.<br>Verein. Lavanttal.</h2></div>
-      <p>Auch die Bildergalerie des bisherigen Webauftritts bleibt als eigener Bestandteil erhalten.</p>
+      <p>Impressionen von Flugbetrieb, Vereinsleben und der besonderen Lage im Lavanttal.</p>
     </div>
     <div class="gallery-grid reveal">
       <div class="gallery-img g1"></div>
@@ -411,7 +402,7 @@
 <section class="newsletter-section">
   <div class="wrap newsletter-box reveal">
     <div><p class="eyebrow light">NEWSLETTER</p><h3>Neuigkeiten vom Flugplatz.</h3><p>Das Abo-Formular des bisherigen Auftritts wird im Relaunch als moderner Newsletter-Bereich weitergeführt.</p></div>
-    <form class="newsletter-form" onsubmit="event.preventDefault();alert('Demo: Newsletter-Anbindung folgt im Livebetrieb.');"><input type="email" required placeholder="E-Mail-Adresse"><button class="btn white" type="submit">Anmelden</button></form>
+    <form class="newsletter-form" id="newsletterForm"><input type="email" name="email" required placeholder="E-Mail-Adresse" autocomplete="email"><button class="btn white" type="submit">Anmelden</button></form>
   </div>
 </section>
 
@@ -438,7 +429,7 @@
       </label>
       <label><span data-i18n="message">Nachricht</span><textarea rows="6" name="message" placeholder="Ihre Nachricht …"></textarea></label>
       <button class="btn form-submit" type="submit" data-i18n="send">Anfrage senden <span>→</span></button>
-      <p class="formnote" data-i18n="formDemo">Demo: Vor Livegang wird das Formular an die gewünschte E-Mail-/Backend-Lösung angebunden.</p>
+      <p class="formnote">Mit dem Absenden wird eine E-Mail an den KLV Wolfsberg vorbereitet. Es erfolgt keine Speicherung der Formulardaten auf dieser Website. <a href="datenschutz.html">Datenschutz</a></p>
     </form>
   </div>
 </section>
@@ -452,11 +443,11 @@
     </div>
     <div class="footer-grid">
       <div><b data-i18n="footerAirport">Flugplatz</b><a href="#pilots">Pilot Briefing</a><a href="#school" data-i18n="navSchool">Flugschule</a><a href="#fleet" data-i18n="navFleet">Flotte</a></div>
-      <div><b data-i18n="footerVisit">Besuchen</b><a href="#restaurant">Restaurant Ikarus</a><a href="#news" data-i18n="navNews">Aktuelles</a><a href="#contact" data-i18n="contact">Kontakt</a></div>
-      <div><b data-i18n="legal">Rechtliches</b><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="admin-demo.html">Admin Demo</a></div>
+      <div><b data-i18n="footerVisit">Besuchen</b><a href="#restaurant">Restaurant Ikarus</a><a href="#contact" data-i18n="contact">Kontakt</a></div>
+      <div><b data-i18n="legal">Rechtliches</b><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
     </div>
   </div>
-  <div class="wrap footer-bottom"><span>© 2026 KLV Wolfsberg · Premium Website Demo</span><span>LOKW · Lavanttal · Kärnten</span></div>
+  <div class="wrap footer-bottom"><span>© 2026 KLV Wolfsberg</span><span>LOKW · Lavanttal · Kärnten</span></div>
 </footer>
 
 <script src="script.js"></script>
