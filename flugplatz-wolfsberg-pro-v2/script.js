@@ -57,24 +57,57 @@ if(newsletter){
   });
 }
 
-/* Orientierungswetter von Open-Meteo – nicht für Flugvorbereitung. */
-(async()=>{
+/* Orientierungswetter von Open-Meteo – automatische Aktualisierung alle 5 Minuten. */
+const weatherCodes={
+  0:"Klar",1:"Überwiegend klar",2:"Teilweise bewölkt",3:"Bedeckt",
+  45:"Nebel",48:"Reifnebel",51:"Leichter Niesel",53:"Nieselregen",55:"Starker Niesel",
+  61:"Leichter Regen",63:"Regen",65:"Starker Regen",71:"Leichter Schneefall",73:"Schneefall",75:"Starker Schneefall",
+  80:"Leichte Schauer",81:"Schauer",82:"Starke Schauer",95:"Gewitter",96:"Gewitter/Hagel",99:"Starkes Gewitter/Hagel"
+};
+const cardinal=(deg)=>{
+  const dirs=["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"];
+  return dirs[Math.round((Number(deg)||0)/22.5)%16];
+};
+let weatherBusy=false;
+async function loadWeather(){
+  if(weatherBusy) return;
+  weatherBusy=true;
+  const state=$("#weatherState"), dot=$("#weatherStatus"), refresh=$("#weatherRefresh");
+  if(state) state.textContent="Wetter wird aktualisiert";
+  if(dot) dot.className="";
+  if(refresh) refresh.disabled=true;
   try{
-    const url="https://api.open-meteo.com/v1/forecast?latitude=46.8183&longitude=14.825&current=temperature_2m,wind_speed_10m,wind_gusts_10m&wind_speed_unit=kn";
+    const url="https://api.open-meteo.com/v1/forecast?latitude=46.8183&longitude=14.8250&current=temperature_2m,relative_humidity_2m,surface_pressure,weather_code,wind_speed_10m,wind_direction_10m,wind_gusts_10m&wind_speed_unit=kn&timezone=Europe%2FVienna";
     const r=await fetch(url,{cache:"no-store"});
     if(!r.ok) throw new Error("weather");
     const j=await r.json(),c=j.current;
     $("#temp").textContent=Math.round(c.temperature_2m)+" °C";
     $("#wind").textContent=Math.round(c.wind_speed_10m)+" kt";
     $("#gust").textContent=Math.round(c.wind_gusts_10m)+" kt";
-    $("#updated").textContent=new Date(c.time).toLocaleTimeString("de-AT",{hour:"2-digit",minute:"2-digit"});
+    $("#humidity").textContent=Math.round(c.relative_humidity_2m)+" %";
+    $("#pressure").textContent=Math.round(c.surface_pressure)+" hPa";
+    $("#windDirection").textContent=cardinal(c.wind_direction_10m)+" · "+Math.round(c.wind_direction_10m)+"°";
+    $("#weatherCondition").textContent=weatherCodes[c.weather_code]||"Aktuell";
+    const stamp=new Date(c.time);
+    $("#updated").textContent=stamp.toLocaleTimeString("de-AT",{hour:"2-digit",minute:"2-digit"});
+    if(state) state.textContent="Live-Daten verfügbar";
+    if(dot) dot.className="ok";
   }catch(e){
-    $("#temp").textContent="–";
-    $("#wind").textContent="–";
-    $("#gust").textContent="–";
-    $("#updated").textContent="nicht verfügbar";
+    ["temp","wind","gust","humidity","pressure"].forEach(id=>{const el=$("#"+id);if(el)el.textContent="–";});
+    if($("#updated")) $("#updated").textContent="nicht verfügbar";
+    if($("#weatherCondition")) $("#weatherCondition").textContent="Keine Daten";
+    if($("#windDirection")) $("#windDirection").textContent="–";
+    if(state) state.textContent="Wetterdienst momentan nicht erreichbar";
+    if(dot) dot.className="error";
+  }finally{
+    weatherBusy=false;
+    if(refresh) refresh.disabled=false;
   }
-})();
+}
+const weatherRefresh=$("#weatherRefresh");
+if(weatherRefresh) weatherRefresh.addEventListener("click",loadWeather);
+loadWeather();
+setInterval(loadWeather,300000);
 
 if("IntersectionObserver" in window){
   const revealObserver=new IntersectionObserver((entries)=>{
